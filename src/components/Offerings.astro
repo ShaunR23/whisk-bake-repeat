@@ -1,4 +1,61 @@
-<section id="offerings">
-        <h2>What We Offer</h2>
-        
-      </section>
+---
+const offerings = [
+  {
+    title: "Custom Cakes",
+    description: "Personalized cakes for birthdays, parties, and special events.",
+  },
+  {
+    title: "Cupcakes",
+    description: "Sweet, shareable cupcakes for gatherings, gifts, and celebrations.",
+  },
+  {
+    title: "Dessert Boxes",
+    description: "Assorted treats for holidays, events, or weekend sweet cravings.",
+  },
+  {
+    title: "Holiday Treats",
+    description: "Seasonal sweets for Christmas, Valentine’s Day, Easter, and more.",
+  },
+  {
+    title: "Birthday Cakes",
+    description: "Fun and memorable cakes made for birthdays of all ages.",
+  },
+  {
+    title: "Special Requests",
+    description: "Have something specific in mind? Reach out to discuss availability.",
+  },
+];
+---
+
+<section id="offerings" class="bg-white px-6 py-16 md:py-24">
+  <div class="mx-auto max-w-6xl">
+    <div class="max-w-2xl">
+      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-pink-700">
+        Offerings
+      </p>
+
+      <h2 class="text-3xl font-bold tracking-tight text-stone-950 md:text-4xl">
+        What we offer
+      </h2>
+
+      <p class="mt-4 text-base leading-7 text-stone-700">
+        From custom cakes to seasonal sweets, Whisk Bake Repeat creates treats
+        for celebrations big and small.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {offerings.map((offering) => (
+        <article class="rounded-3xl bg-orange-50 p-6 shadow-sm ring-1 ring-orange-100">
+          <h3 class="text-lg font-bold text-stone-950">
+            {offering.title}
+          </h3>
+
+          <p class="mt-3 text-sm leading-6 text-stone-700">
+            {offering.description}
+          </p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
