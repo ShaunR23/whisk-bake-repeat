@@ -1,37 +1,61 @@
 ---
 const galleryItems = [
-  "Birthday cake",
-  "Cupcakes",
-  "Custom cake",
-  "Dessert box",
-  "Celebration cake",
-  "Holiday treats",
+  {
+    src: "/images/IMG_1184.JPG",
+    alt: "Custom cake by Whisk Bake Repeat",
+  },
+  {
+    src: "/images/IMG_1185.JPG",
+    alt: "Birthday cake by Whisk Bake Repeat",
+  },
+  {
+    src: "/images/IMG_1186.JPG",
+    alt: "Cupcakes by Whisk Bake Repeat",
+  },
+  {
+    src: "/images/IMG_1187.JPG",
+    alt: "Dessert box by Whisk Bake Repeat",
+  },
+  {
+    src: "/images/holiday-treats-1.jpg",
+    alt: "Holiday treats by Whisk Bake Repeat",
+  },
 ];
 ---
 
 <section id="gallery" class="bg-white px-6 py-16 md:py-24">
   <div class="mx-auto max-w-6xl">
-    <div class="max-w-2xl">
-      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-rose-700">
-        Gallery
-      </p>
+    <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <div class="max-w-2xl">
+        <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-rose-700">
+          Gallery
+        </p>
 
-      <h2 class="font-serif text-3xl font-bold tracking-tight text-stone-950 md:text-4xl">
-        Recent bakes and sweet creations
-      </h2>
+        <h2 class="font-serif text-3xl font-bold tracking-tight text-stone-950 md:text-4xl">
+          A few recent bakes
+        </h2>
 
-      <p class="mt-4 text-base leading-7 text-stone-700">
-        A look at custom cakes, cupcakes, and treats made for birthdays,
-        holidays, and special occasions.
-      </p>
+        <p class="mt-4 text-base leading-7 text-stone-700">
+          Swipe through a few custom cakes and treats made for recent celebrations.
+        </p>
+      </div>
+
+      <a
+        href="/gallery"
+        class="text-sm font-semibold text-rose-700 hover:text-rose-800"
+      >
+        View full gallery →
+      </a>
     </div>
 
-    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="mt-10 flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
       {galleryItems.map((item) => (
-        <div class="overflow-hidden rounded-3xl bg-amber-50 p-3 shadow-sm ring-1 ring-rose-100">
-          <div class="flex aspect-square items-center justify-center rounded-2xl bg-rose-50 text-sm font-medium text-stone-500">
-            {item} photo
-          </div>
+        <div class="min-w-[80%] snap-center overflow-hidden rounded-3xl bg-rose-50 p-3 shadow-sm ring-1 ring-rose-100 sm:min-w-[45%] lg:min-w-[30%]">
+          <img
+            src={item.src}
+            alt={item.alt}
+            class="aspect-square w-full rounded-2xl object-cover"
+          />
         </div>
       ))}
     </div>
