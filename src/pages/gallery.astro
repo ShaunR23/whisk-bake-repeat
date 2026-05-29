@@ -1,0 +1,89 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const galleryItems = [
+  {
+    src: "/images/cake-1.jpg",
+    alt: "Custom cake by Whisk Bake Repeat",
+  },
+  {
+    src: "/images/cake-2.jpg",
+    alt: "Birthday cake by Whisk Bake Repeat",
+  },
+  {
+    src: "/images/cupcakes-1.jpg",
+    alt: "Cupcakes by Whisk Bake Repeat",
+  },
+  {
+    src: "/images/dessert-box-1.jpg",
+    alt: "Dessert box by Whisk Bake Repeat",
+  },
+  {
+    src: "/images/holiday-treats-1.jpg",
+    alt: "Holiday treats by Whisk Bake Repeat",
+  },
+  {
+    src: "/images/cake-3.jpg",
+    alt: "Celebration cake by Whisk Bake Repeat",
+  },
+];
+---
+
+<Layout title="Gallery | Whisk Bake Repeat">
+  <Header />
+
+  <main class="bg-amber-50 px-6 py-16 md:py-24">
+    <section class="mx-auto max-w-6xl">
+      <div class="max-w-2xl">
+        <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-rose-700">
+          Gallery
+        </p>
+
+        <h1 class="font-serif text-4xl font-bold tracking-tight text-stone-950 md:text-6xl">
+          Sweet creations for every celebration
+        </h1>
+
+        <p class="mt-5 text-base leading-7 text-stone-700 md:text-lg">
+          Browse recent cakes, cupcakes, and custom treats from Whisk Bake Repeat.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {galleryItems.map((item) => (
+          <div class="overflow-hidden rounded-3xl bg-rose-50 p-3 shadow-sm ring-1 ring-rose-100">
+            <img
+              src={item.src}
+              alt={item.alt}
+              class="aspect-square w-full rounded-2xl object-cover"
+            />
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-16 rounded-[2rem] bg-stone-950 px-6 py-10 text-center text-white shadow-sm md:px-12">
+        <p class="text-sm font-semibold uppercase tracking-[0.2em] text-rose-300">
+          Like what you see?
+        </p>
+
+        <h2 class="mt-3 font-serif text-3xl font-bold tracking-tight md:text-4xl">
+          Ask about availability for your next celebration
+        </h2>
+
+        <p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-stone-300">
+          Reach out with your event date, dessert idea, serving size, and any inspiration photos.
+        </p>
+
+        <a
+          href="/#contact"
+          class="mt-8 inline-flex rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-950 shadow-sm hover:bg-amber-50"
+        >
+          Contact Us
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>
