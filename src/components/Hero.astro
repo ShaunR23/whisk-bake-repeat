@@ -1,3 +1,8 @@
+---
+import { galleryItems } from "../data/gallery";
+
+const heroImage = galleryItems.find((item) => item.hero);
+---
 <section class="px-6 py-16 md:py-24">
   <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-2 md:items-center">
     <div>
@@ -30,11 +35,14 @@
         </a>
       </div>
     </div>
-
-    <div class="rounded-[2rem] bg-white p-4 shadow-sm ring-1 ring-rose-100">
-      <div class="flex aspect-[4/5] items-center justify-center rounded-[1.5rem] bg-rose-50 text-center text-sm font-medium text-stone-500">
-        Featured cake photo
-      </div>
-    </div>
+    {heroImage && (
+  <div class="rounded-[2rem] bg-white p-4 shadow-sm ring-1 ring-rose-100">
+    <img
+      src={heroImage.src}
+      alt={heroImage.alt}
+      class="aspect-[4/5] w-full rounded-[1.5rem] object-cover"
+    />
+  </div>
+)}
   </div>
 </section>

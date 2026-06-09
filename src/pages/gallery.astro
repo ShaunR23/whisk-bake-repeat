@@ -2,36 +2,13 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-
-const galleryItems = [
-  {
-    src: "/images/cake-1.jpg",
-    alt: "Custom cake by Whisk Bake Repeat",
-  },
-  {
-    src: "/images/cake-2.jpg",
-    alt: "Birthday cake by Whisk Bake Repeat",
-  },
-  {
-    src: "/images/cupcakes-1.jpg",
-    alt: "Cupcakes by Whisk Bake Repeat",
-  },
-  {
-    src: "/images/dessert-box-1.jpg",
-    alt: "Dessert box by Whisk Bake Repeat",
-  },
-  {
-    src: "/images/holiday-treats-1.jpg",
-    alt: "Holiday treats by Whisk Bake Repeat",
-  },
-  {
-    src: "/images/cake-3.jpg",
-    alt: "Celebration cake by Whisk Bake Repeat",
-  },
-];
+import { galleryItems } from "../data/gallery";
 ---
 
-<Layout title="Gallery | Whisk Bake Repeat">
+<Layout
+  title="Gallery | Whisk Bake Repeat"
+  description="Browse custom cakes, cupcakes, and sweet treats from Whisk Bake Repeat."
+>
   <Header />
 
   <main class="bg-amber-50 px-6 py-16 md:py-24">
@@ -56,7 +33,7 @@ const galleryItems = [
             <img
               src={item.src}
               alt={item.alt}
-              class="aspect-square w-full rounded-2xl object-cover"
+              class="aspect-square w-full rounded-2xl object-cover object-center"
             />
           </div>
         ))}
@@ -72,7 +49,8 @@ const galleryItems = [
         </h2>
 
         <p class="mx-auto mt-4 max-w-2xl text-base leading-7 text-stone-300">
-          Reach out with your event date, dessert idea, serving size, and any inspiration photos.
+          Reach out with your event date, dessert idea, serving size, and any
+          inspiration photos. We’ll follow up with availability and next steps.
         </p>
 
         <a

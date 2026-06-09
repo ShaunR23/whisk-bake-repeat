@@ -1,26 +1,7 @@
 ---
-const galleryItems = [
-  {
-    src: "/images/IMG_1184.JPG",
-    alt: "Custom cake by Whisk Bake Repeat",
-  },
-  {
-    src: "/images/IMG_1185.JPG",
-    alt: "Birthday cake by Whisk Bake Repeat",
-  },
-  {
-    src: "/images/IMG_1186.JPG",
-    alt: "Cupcakes by Whisk Bake Repeat",
-  },
-  {
-    src: "/images/IMG_1187.JPG",
-    alt: "Dessert box by Whisk Bake Repeat",
-  },
-  {
-    src: "/images/holiday-treats-1.jpg",
-    alt: "Holiday treats by Whisk Bake Repeat",
-  },
-];
+import { galleryItems } from "../data/gallery";
+const featuredGalleryItems = galleryItems.filter((item) => item.featured);
+
 ---
 
 <section id="gallery" class="bg-white px-6 py-16 md:py-24">
@@ -49,15 +30,17 @@ const galleryItems = [
     </div>
 
     <div class="mt-10 flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory">
-      {galleryItems.map((item) => (
-        <div class="min-w-[80%] snap-center overflow-hidden rounded-3xl bg-rose-50 p-3 shadow-sm ring-1 ring-rose-100 sm:min-w-[45%] lg:min-w-[30%]">
-          <img
-            src={item.src}
-            alt={item.alt}
-            class="aspect-square w-full rounded-2xl object-cover"
-          />
-        </div>
-      ))}
+  {featuredGalleryItems.map((item) => (
+    <div class="flex-none w-[82%] snap-center overflow-hidden rounded-3xl bg-rose-50 p-3 shadow-sm ring-1 ring-rose-100 sm:w-[45%] lg:w-[30%]">
+      <div class="aspect-square overflow-hidden rounded-2xl">
+        <img
+          src={item.src}
+          alt={item.alt}
+          class="h-full w-full object-cover object-center"
+        />
+      </div>
     </div>
+  ))}
+</div>
   </div>
 </section>

@@ -8,39 +8,60 @@ import Footer from "../components/Footer.astro";
   <Header />
 
   <main class="bg-amber-50 px-6 py-16 md:py-24">
-    <section class="mx-auto max-w-3xl">
-      <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-rose-700">
-        About
-      </p>
+    <section class="mx-auto max-w-6xl">
+      <div class="grid gap-10 md:grid-cols-2 md:items-center">
+        <div>
+          <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-rose-700">
+            About
+          </p>
 
-      <h1 class="font-serif text-4xl font-bold tracking-tight text-stone-950 md:text-6xl">
-        The story behind Whisk Bake Repeat
-      </h1>
+          <h1 class="font-serif text-4xl font-bold tracking-tight text-stone-950 md:text-6xl">
+            The story behind Whisk Bake Repeat
+          </h1>
 
-      <div class="mt-8 space-y-6 text-base leading-8 text-stone-700 md:text-lg">
-        <p>
-          This is where her longer about-me story can go. She can talk about how
-          she started baking, what she loves making, and what makes each order
-          personal.
-        </p>
+          <p class="mt-6 text-base leading-8 text-stone-700 md:text-lg">
+            Whisk Bake Repeat is a home baking business built around custom
+            cakes, sweet treats, and the joy of making celebrations feel a
+            little more personal.
+          </p>
+        </div>
 
-        <p>
-          She can also include her baking style, favorite types of cakes, family
-          inspiration, or what customers can expect when reaching out.
-        </p>
-
-        <p>
-          Replace this with her real wording once she writes it.
-        </p>
+        <div class="rounded-[2rem] bg-rose-50 p-4 shadow-sm ring-1 ring-rose-100">
+          <img
+            src="/images/about-me.JPG"
+            alt="The baker behind Whisk Bake Repeat"
+            class="aspect-[4/5] w-full rounded-[1.5rem] object-cover object-center"
+          />
+        </div>
       </div>
 
-      <div class="mt-10">
-        <a
-          href="/#contact"
-          class="rounded-full bg-rose-700 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-rose-800"
-        >
-          Ask About Availability
-        </a>
+      <div class="mx-auto mt-14 max-w-3xl space-y-6 text-base leading-8 text-stone-700 md:text-lg">
+        <p>
+          This is where her longer about-me story can go. She can talk about how
+          she started baking, what inspired Whisk Bake Repeat, and what she loves
+          most about creating cakes and treats for other people.
+        </p>
+
+        <p>
+          She can also share more about her baking style, favorite types of
+          orders, family inspiration, or what customers can expect when they
+          reach out about a custom request.
+        </p>
+
+        <p>
+          Every order is a chance to create something thoughtful, personal, and
+          sweet for birthdays, holidays, milestones, and everyday celebrations.
+          Replace this placeholder text with her real story when she is ready.
+        </p>
+
+        <div class="pt-4">
+          <a
+            href="/#contact"
+            class="inline-flex rounded-full bg-rose-700 px-6 py-3 text-sm font-semibold text-white shadow-sm hover:bg-rose-800"
+          >
+            Ask About Availability
+          </a>
+        </div>
       </div>
     </section>
   </main>
