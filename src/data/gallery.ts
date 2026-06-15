@@ -37,7 +37,7 @@ export const galleryItems = [
         src: "/images/image7.jpeg",
         alt: "Custom cake by Whisk Bake Repeat",
         featured: false,
-        hero: true
+        
       },
       {
         src: "/images/image8.jpeg",
@@ -93,5 +93,11 @@ export const galleryItems = [
         src: "/images/IMG_1187.JPG",
         alt: "Custom cake by Whisk Bake Repeat",
         featured: false
+      },
+      {
+        src: "/images/IMG_4506.jpeg",
+        alt: "Custom cake by Whisk Bake Repeat",
+        featured: true,
+        hero: true
       }
 ]
