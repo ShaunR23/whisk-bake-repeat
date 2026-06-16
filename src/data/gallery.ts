@@ -1,103 +1,163 @@
 export const galleryItems = [
 
     {
-        src: "/images/image0_1.jpeg",
-        alt: "Custom cake by Whisk Bake Repeat",
+        src: "/images/assortment.jpeg",
+        alt: "Custom assortment",
         featured: true,
+        category: "cupcakesAndMore",
       },
       {
-        src: "/images/image0.jpeg",
+        src: "/images/cake1.jpeg",
         alt: "Custom cake by Whisk Bake Repeat",
         featured: true,
+        category: "Cakes"
 
       },
       {
-        src: "/images/image1.jpeg",
+        src: "/images/cake2.jpeg",
         alt: "Custom cake by Whisk Bake Repeat",
         featured: true,
+        category: "Cakes"
 
       },
       {
-        src: "/images/image4.jpeg",
+        src: "/images/cake3.jpeg",
         alt: "Custom cake by Whisk Bake Repeat",
         featured: false,
+        category: "Cakes"
 
       },
       {
-        src: "/images/image5.jpeg",
-        alt: "Custom cake by Whisk Bake Repeat",
-        featured: false
-      },
-      {
-        src: "/images/image6.jpeg",
-        alt: "Custom cake by Whisk Bake Repeat",
-        featured: false
-      },
-      {
-        src: "/images/image7.jpeg",
+        src: "/images/cake4.jpeg",
         alt: "Custom cake by Whisk Bake Repeat",
         featured: false,
+        category: "Cakes"
+      },
+      {
+        src: "/images/cake5.jpeg",
+        alt: "Custom cake by Whisk Bake Repeat",
+        featured: false,
+        category: "Cakes"
+      },
+      {
+        src: "/images/cake6.jpeg",
+        alt: "Custom cake by Whisk Bake Repeat",
+        featured: false,
+        category: "Cakes"
         
       },
       {
-        src: "/images/image8.jpeg",
+        src: "/images/cake7.jpeg",
         alt: "Custom cake by Whisk Bake Repeat",
-        featured: false
+        featured: false,
+        category: "Cakes"
       },
       {
-        src: "/images/image9.jpeg",
+        src: "/images/cake8.jpeg",
         alt: "Custom cake by Whisk Bake Repeat",
-        featured: false
+        featured: false,
+        category: "Cakes"
       },
       {
-        src: "/images/image10.jpeg",
-        alt: "Custom cake by Whisk Bake Repeat",
-        featured: false
-      },
-      {
-        src: "/images/image11.jpeg",
-        alt: "Custom cake by Whisk Bake Repeat",
-        featured: false
-      },
-      {
-        src: "/images/image12.jpeg",
-        alt: "Custom cake by Whisk Bake Repeat",
-        featured: false
-      },
-      {
-        src: "/images/image13.jpeg",
-        alt: "Custom cake by Whisk Bake Repeat",
-        featured: false
-      },
-      {
-        src: "/images/image15.jpeg",
-        alt: "Custom cake by Whisk Bake Repeat",
-        featured: false
-      },
-      {
-        src: "/images/IMG_1184.JPG",
-        alt: "Custom cake by Whisk Bake Repeat",
-        featured: false
-      },
-      {
-        src: "/images/IMG_1185.JPG",
-        alt: "Custom cake by Whisk Bake Repeat",
-        featured: false
-      },
-      {
-        src: "/images/IMG_1186.JPG",
-        alt: "Custom cake by Whisk Bake Repeat",
-        featured: false
-      },
-      {
-        src: "/images/IMG_1187.JPG",
-        alt: "Custom cake by Whisk Bake Repeat",
-        featured: false
-      },
-      {
-        src: "/images/IMG_4506.jpeg",
+        src: "/images/cake9.jpeg",
         alt: "Custom cake by Whisk Bake Repeat",
         featured: true,
-        hero: true
-      }
+        category: "Cakes",
+        hero: true,
+      },
+      {
+        src: "/images/cake10.jpeg",
+        alt: "Custom cake by Whisk Bake Repeat",
+        featured: false,
+        category: "Cakes"
+      },
+      {
+        src: "/images/cake11.jpeg",
+        alt: "Custom cake by Whisk Bake Repeat",
+        featured: false,
+        category: "Cakes"
+      },
+      {
+        src: "/images/cake12.jpeg",
+        alt: "Custom cake by Whisk Bake Repeat",
+        featured: false,
+        category: "Cakes"
+      },
+      {
+        src: "/images/cake13.jpeg",
+        alt: "Custom cake by Whisk Bake Repeat",
+        featured: false,
+        category: "Cakes"
+      },
+      {
+        src: "/images/cake14.jpeg",
+        alt: "Custom cake by Whisk Bake Repeat",
+        featured: false,
+        category: "Cakes"
+      },
+      {
+        src: "/images/cupcake1.jpeg",
+        alt: "Custom cake by Whisk Bake Repeat",
+        featured: false,
+        category: "cupcakesAndMore"
+      },
+      {
+        src: "/images/cupcake2.jpeg",
+        alt: "Custom cake by Whisk Bake Repeat",
+        featured: false,
+        category: "cupcakesAndMore",
+      },
+      {
+        src: "/images/miniloaf1.JPG",
+        alt: "Custom mini loaf by Whisk Bake Repeat",
+        featured: false,
+        category: "miniLoaves"
+      },
+      {
+        src: "/images/miniloaf2.JPG",
+        alt: "Custom mini loaf by Whisk Bake Repeat",
+        featured: false,
+        category: "miniLoaves"
+      },
+      {
+        src: "/images/miniloaf3.jpeg",
+        alt: "Custom mini loaf by Whisk Bake Repeat",
+        featured: false,
+        category: "miniLoaves"
+      },
+      {
+        src: "/images/miniloaf4.JPG",
+        alt: "Custom mini loaf by Whisk Bake Repeat",
+        featured: false,
+        category: "miniLoaves"
+      },
+      {
+        src: "/images/miniloaf5.jpeg",
+        alt: "Custom mini loaf by Whisk Bake Repeat",
+        featured: false,
+        category: "miniLoaves"
+      },
+      {
+      src: "/images/miniloaf6.jpeg",
+      alt: "Custom mini loaf by Whisk Bake Repeat",
+      featured: true,
+      hero: true,
+      category: "miniLoaves"
+    },
+    {
+      src: "/images/miniloaf7.JPG",
+      alt: "Custom mini loaf by Whisk Bake Repeat",
+      featured: true,
+      hero: true,
+      category: "miniLoaves"
+    },
+    {
+      src: "/images/miniloaf8.jpeg",
+      alt: "Custom mini loaf by Whisk Bake Repeat",
+      featured: true,
+      hero: true,
+      category: "miniLoaves"
+    },
+
+
 ]
