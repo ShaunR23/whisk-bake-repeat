@@ -1,8 +1,27 @@
+
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { galleryItems } from "../data/gallery";
+
+const gallerySections = [
+  {
+    title: "Cakes",
+    description: "Custom cakes for birthdays, celebrations, and special moments.",
+    items: galleryItems.filter((item) => item.category === "Cakes"),
+  },
+  {
+    title: "Mini Loaves",
+    description: "Sweet mini loaves for gifting, gatherings, and everyday treats.",
+    items: galleryItems.filter((item) => item.category === "miniLoaves"),
+  },
+  {
+    title: "Cupcakes & More",
+    description: "Cupcakes, dessert boxes, seasonal treats, and other sweet creations.",
+    items: galleryItems.filter((item) => item.category === "cupcakesAndMore"),
+  },
+];
 ---
 
 <Layout
@@ -27,17 +46,35 @@ import { galleryItems } from "../data/gallery";
         </p>
       </div>
 
-      <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {galleryItems.map((item) => (
-          <div class="overflow-hidden rounded-3xl bg-rose-50 p-3 shadow-sm ring-1 ring-rose-100">
-            <img
-              src={item.src}
-              alt={item.alt}
-              class="aspect-square w-full rounded-2xl object-cover object-center"
-            />
-          </div>
-        ))}
-      </div>
+      <div class="mt-12 space-y-16">
+  {gallerySections.map((section) => (
+    section.items.length > 0 && (
+      <section>
+        <div class="max-w-2xl">
+          <h2 class="font-serif text-3xl font-bold tracking-tight text-stone-950 md:text-4xl">
+            {section.title}
+          </h2>
+
+          <p class="mt-3 text-base leading-7 text-stone-700">
+            {section.description}
+          </p>
+        </div>
+
+        <div class="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
+          {section.items.map((item) => (
+            <div class="overflow-hidden rounded-2xl bg-rose-50 p-2 shadow-sm ring-1 ring-rose-100 sm:rounded-3xl sm:p-3">
+              <img
+                src={item.src}
+                alt={item.alt}
+                class="aspect-square w-full rounded-xl object-cover object-center sm:rounded-2xl"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  ))}
+</div>
 
       <div class="mt-16 rounded-[2rem] bg-stone-950 px-6 py-10 text-center text-white shadow-sm md:px-12">
         <p class="text-sm font-semibold uppercase tracking-[0.2em] text-rose-300">
