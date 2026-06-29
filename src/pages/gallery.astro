@@ -61,16 +61,21 @@ const gallerySections = [
         </div>
 
         <div class="mt-6 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
-          {section.items.map((item) => (
-            <div class="overflow-hidden rounded-2xl bg-rose-50 p-2 shadow-sm ring-1 ring-rose-100 sm:rounded-3xl sm:p-3">
-              <img
-                src={item.src}
-                alt={item.alt}
-                class="aspect-square w-full rounded-xl object-cover object-center sm:rounded-2xl"
-              />
-            </div>
-          ))}
-        </div>
+  {section.items.map((item) => (
+    <button
+      type="button"
+      class="group cursor-pointer overflow-hidden rounded-2xl bg-rose-50 p-2 shadow-sm ring-1 ring-rose-100 transition hover:-translate-y-0.5 hover:shadow-md sm:rounded-3xl sm:p-3"
+      data-lightbox-src={item.src}
+      data-lightbox-alt={item.alt}
+    >
+      <img
+        src={item.src}
+        alt={item.alt}
+        class="aspect-square w-full rounded-xl object-cover object-center transition group-hover:scale-[1.02] sm:rounded-2xl"
+      />
+    </button>
+  ))}
+</div>
       </section>
     )
   ))}
@@ -99,6 +104,136 @@ const gallerySections = [
       </div>
     </section>
   </main>
-
   <Footer />
+  <div
+  id="lightbox"
+  class="fixed inset-0 z-[100] hidden items-center justify-center bg-black/80 px-4 py-8"
+>
+  <button
+    type="button"
+    id="lightbox-close"
+    class="absolute right-4 top-4 rounded-full bg-white px-4 py-2 text-sm font-semibold text-stone-950 shadow-sm"
+  >
+    Close
+  </button>
+
+  <button
+    type="button"
+    id="lightbox-prev"
+    class="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 px-4 py-3 text-2xl font-bold text-stone-950 shadow-sm hover:bg-white"
+    aria-label="Previous image"
+  >
+    ‹
+  </button>
+
+  <img
+    id="lightbox-image"
+    src=""
+    alt=""
+    class="max-h-[85vh] min-w-[70vw] max-w-[92vw] rounded-2xl object-contain shadow-2xl md:min-w-[40vw]"
+  />
+
+  <button
+    type="button"
+    id="lightbox-next"
+    class="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 px-4 py-3 text-2xl font-bold text-stone-950 shadow-sm hover:bg-white"
+    aria-label="Next image"
+  >
+    ›
+  </button>
+</div>
+
+<script>
+  const lightbox = document.querySelector("#lightbox");
+  const lightboxImage = document.querySelector("#lightbox-image");
+  const closeButton = document.querySelector("#lightbox-close");
+  const prevButton = document.querySelector("#lightbox-prev");
+  const nextButton = document.querySelector("#lightbox-next");
+  const imageButtons = Array.from(
+    document.querySelectorAll("[data-lightbox-src]")
+  );
+
+  let currentImageIndex = 0;
+
+  function showImage(index) {
+    const button = imageButtons[index];
+
+    if (!button || !lightboxImage) return;
+
+    const src = button.getAttribute("data-lightbox-src");
+    const alt = button.getAttribute("data-lightbox-alt") ?? "";
+
+    if (!src) return;
+
+    lightboxImage.setAttribute("src", src);
+    lightboxImage.setAttribute("alt", alt);
+    currentImageIndex = index;
+  }
+
+  function openLightbox(index) {
+    if (!lightbox) return;
+
+    showImage(index);
+
+    lightbox.classList.remove("hidden");
+    lightbox.classList.add("flex");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeLightbox() {
+    if (!lightbox || !lightboxImage) return;
+
+    lightbox.classList.add("hidden");
+    lightbox.classList.remove("flex");
+    lightboxImage.setAttribute("src", "");
+    lightboxImage.setAttribute("alt", "");
+    document.body.style.overflow = "";
+  }
+
+  function showPreviousImage() {
+    const previousIndex =
+      currentImageIndex === 0 ? imageButtons.length - 1 : currentImageIndex - 1;
+
+    showImage(previousIndex);
+  }
+
+  function showNextImage() {
+    const nextIndex =
+      currentImageIndex === imageButtons.length - 1 ? 0 : currentImageIndex + 1;
+
+    showImage(nextIndex);
+  }
+
+  imageButtons.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      openLightbox(index);
+    });
+  });
+
+  closeButton?.addEventListener("click", closeLightbox);
+  prevButton?.addEventListener("click", showPreviousImage);
+  nextButton?.addEventListener("click", showNextImage);
+
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (!lightbox || lightbox.classList.contains("hidden")) return;
+
+    if (event.key === "Escape") {
+      closeLightbox();
+    }
+
+    if (event.key === "ArrowLeft") {
+      showPreviousImage();
+    }
+
+    if (event.key === "ArrowRight") {
+      showNextImage();
+    }
+  });
+</script>
 </Layout>
